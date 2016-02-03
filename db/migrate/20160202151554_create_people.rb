@@ -4,7 +4,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :name
       t.float :weight
       t.float :height
-      t.string :color
+      t.string :colour
 
       t.timestamps
     end

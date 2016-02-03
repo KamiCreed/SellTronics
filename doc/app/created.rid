@@ -1,0 +1,10 @@
+Tue, 02 Feb 2016 23:56:23 -0800
+README.rdoc	Mon, 25 Jan 2016 22:13:52 -0800
+app/controllers/application_controller.rb	Mon, 25 Jan 2016 22:13:52 -0800
+app/controllers/people_controller.rb	Tue, 02 Feb 2016 23:31:32 -0800
+app/controllers/welcome_controller.rb	Mon, 25 Jan 2016 23:03:22 -0800
+app/helpers/application_helper.rb	Mon, 25 Jan 2016 22:13:52 -0800
+app/helpers/people_helper.rb	Tue, 02 Feb 2016 07:02:44 -0800
+app/helpers/welcome_helper.rb	Mon, 25 Jan 2016 23:03:22 -0800
+app/models/people.rb	Tue, 02 Feb 2016 07:15:54 -0800
+app/models/person.rb	Tue, 02 Feb 2016 23:22:12 -0800

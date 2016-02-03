@@ -8,13 +8,18 @@ class PeopleController < ApplicationController
   end
 
   def new
+    @person = Person.new
   end
 
   def create
     @person = Person.new(person_params)
 
-    @person.save
-    redirect_to @person
+    # In case of bad input
+    if @person.save
+      redirect_to @person
+    else
+      render 'new'
+    end
   end
 
   private

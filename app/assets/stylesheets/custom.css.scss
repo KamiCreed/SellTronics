@@ -17,10 +17,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 /* Typography */
@@ -60,9 +59,37 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
-#logo:hover {
-  color: white;
-  text-decoration: none;
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid grey;
+  color: #777;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }

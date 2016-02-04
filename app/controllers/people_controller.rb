@@ -21,7 +21,7 @@ class PeopleController < ApplicationController
     # In case of bad input
     if @person.save
       redirect_to @person
-    else
+    else # render 'new' and show error messages
       render 'new'
     end
   end
@@ -34,6 +34,13 @@ class PeopleController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @person = Person.find(params[:id])
+    @person.destroy
+
+    redirect_to people_path
   end
 
   private

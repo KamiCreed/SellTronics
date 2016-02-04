@@ -1,46 +1,5 @@
 <h1>New Person</h1>
 
-<%= form_for :person, url: people_path do |f| %>
-
-  <!-- Display error messages, if any -->
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@person.errors.count, "error") %>
-        prohibited this person from being saved:
-      </h2>
-      <ul>
-        <% @person.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <!-- Display the form for person -->
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
-  </p>
-
-  <p>
-    <%= f.label :height %><br>
-    <%= f.text_field :height %>
-  </p>
-
-  <p>
-    <%= f.label :colour %><br>
-    <%= f.text_field :colour %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', people_path %>

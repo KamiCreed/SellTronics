@@ -1,9 +1,9 @@
 class PeopleController < ApplicationController
-  def index # View for table of all people
+  def index # Finds data for all people
     @people = Person.all
   end
 
-  def show # View individual people
+  def show # Finds individual people
     @person = Person.find(params[:id])
   end
 
@@ -18,7 +18,7 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
 
-    # In case of bad input
+    # Checks if it is saved in case of bad input
     if @person.save
       redirect_to @person
     else # render 'new' and show error messages

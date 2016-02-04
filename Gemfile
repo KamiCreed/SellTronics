@@ -4,6 +4,7 @@ ruby '2.2.2', :engine => 'jruby', :engine_version => '9.0.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
+gem 'bootstrap-sass', '3.2.0.0'
 # Use postgresql as the database for Active Record
 gem 'activerecord-jdbcpostgresql-adapter'
 gem 'rails_12factor', group: :production

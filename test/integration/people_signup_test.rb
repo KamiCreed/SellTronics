@@ -26,5 +26,6 @@ class PeopleSignupTest < ActionDispatch::IntegrationTest
       }
     end
     assert_template 'people/show'
+    assert is_logged_in?
   end
 end

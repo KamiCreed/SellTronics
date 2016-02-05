@@ -10,14 +10,10 @@ One of the errors is remedied by reinstalling bundle using
   gem install bundle
 
 run
-
-rake db:migrate:reset
-
+  rake db:migrate:reset
 then
-
-rake db:seed
-
-to generate one sample user with Admin privileges and 99 other sample users without privileges
+  rake db:seed
+to generate one sample user with Admin privileges and 99 other sample users without privileges for local hosting.
 
 Code to generate samples is stored in /db/seeds.rb
 
@@ -27,4 +23,4 @@ Sign up and Log in
 
 Login feature with Admin. Admin are the only ones able to delete entries.
 
-Profile that shows a Gravatar picture
+Profile that shows a Gravatar picture.

@@ -60,6 +60,7 @@ class PeopleController < ApplicationController
     # Confirms a logged-in person.
     def logged_in_person
       unless logged_in?
+        store_location
         flash[:danger] = "Please log in."
         redirect_to login_url
       end

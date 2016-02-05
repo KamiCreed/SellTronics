@@ -7,4 +7,9 @@ https://www.railstutorial.org/book
 
 To use various commands on this project, jruby 9.0.0.0 must be installed.
 One of the errors is remedied by reinstalling bundle using
-  'gem install bundle'
+  gem install bundle
+
+Features:
+
+Sign up and Log in
+Profile that shows a Gravatar picture

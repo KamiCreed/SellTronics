@@ -5,18 +5,6 @@ http://guides.rubyonrails.org/getting_started.html#adding-some-validation
 and
 https://www.railstutorial.org/book
 
-To use various commands on this project, jruby 9.0.0.0 must be installed.
-One of the errors is remedied by reinstalling bundle using
-  gem install bundle
-
-run
-  rake db:migrate:reset
-then
-  rake db:seed
-to generate one sample user with Admin privileges and 99 other sample users without privileges for local hosting.
-
-Code to generate samples is stored in /db/seeds.rb. The login information for the Admin person is also stored there.
-
 Features:
 
 Sign up and Log in
@@ -24,3 +12,25 @@ Sign up and Log in
 Login feature with Admin. Admin are the only ones able to delete entries.
 
 Profile that shows a Gravatar picture.
+
+--------------
+
+If you want to run this locally, these series of installs should get you going:
+
+First install ruby, jruby, jdk 8. Then run
+  gem install bundle
+or
+  jruby -S gem install bundler
+Then run
+  gem install rails
+to install rails
+
+Finally, clone this repository, direct to it, and run
+  bundle install
+then run these series of commands:
+  rake db:create
+  rake db:migrate:reset # :reset could be omitted if this is the first migrate
+  rake db:seed
+to generate one sample user with Admin privileges and 99 other sample users without privileges for local hosting.
+
+The code to generate samples is stored in /db/seeds.rb. The login information for the Admin person is also stored there.

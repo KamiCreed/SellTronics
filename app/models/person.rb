@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
   validates :name, presence: true
-  validates :weight, presence: true, numericality: true
-  validates :height, presence: true, numericality: true
-  validates :colour, presence: true
+  validates :email, presence: true
+  validates :weight, numericality: true, allow_blank: true
+  validates :height, numericality: true, allow_blank: true
 end

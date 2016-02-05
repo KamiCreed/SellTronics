@@ -6,6 +6,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Email</th>
     <th>Weight</th>
     <th>Height</th>
     <th>Colour</th>
@@ -15,6 +16,7 @@
   <% @people.each do |person| %>
     <tr>
       <td><%= person.name %></td>
+      <td><%= person.email %></td>
       <td><%= person.weight %></td>
       <td><%= person.height %></td>
       <td><%= person.colour %></td>

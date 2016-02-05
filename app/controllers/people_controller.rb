@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :logged_in_person, only: [:edit, :update]
+  before_action :logged_in_person, only: [:index, :edit, :update]
   before_action :correct_person, only: [:edit, :update]
 
   def index # Finds data for all people

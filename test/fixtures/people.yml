@@ -8,8 +8,3 @@ archer:
   name: Sterling Archer
   email: duchess@example.gov
   password_digest: <%= Person.digest('password') %>
-
-admin:
-  name: Admin
-  email: admin@example.gov
-  password_digest: <%= Person.digest('password') %>

@@ -1,30 +1,22 @@
-<% provide(:title, "List People") %>
-<h1>People</h1>
-<%= link_to 'New person', signup_path %>
+<% provide(:title, "All People") %>
+<h1>All People</h1>
 
-<!-- Table of all the people -->
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Weight</th>
-    <th>Height</th>
-    <th>Colour</th>
-    <th colspan="3"></th>
-  </tr>
-
+<ul class="people">
   <% @people.each do |person| %>
-    <tr>
-      <td><%= person.name %></td>
-      <td><%= person.email %></td>
-      <td><%= person.weight %></td>
-      <td><%= person.height %></td>
-      <td><%= person.colour %></td>
-      <td><%= link_to 'Show', person_path(person) %></td>
-      <td><%= link_to 'Edit', edit_person_path(person) %></td>
-      <td><%= link_to 'Delete', person_path(person),
-              method: :delete,
-              data: {confirm: 'Are you sure?'} %></td>
-    </tr>
+    <li>
+      <%= gravatar_for person, size: 50 %>
+      <%= link_to person.name, person %>
+
+      <!-- Check whether to display extra data -->
+      <% if !person.weight.blank? %>
+        <p>Weight: <%= person.weight %></p>
+      <% end %>
+      <% if !person.height.blank? %>
+        <p>Height: <%= person.height %></p>
+      <% end %>
+      <% if !person.colour.blank? %>
+        <p>Colour: <%= person.colour %></p>
+      <% end %>
+    </li>
   <% end %>
-</table>
+</ul>

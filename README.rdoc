@@ -12,7 +12,4 @@ One of the errors is remedied by reinstalling bundle using
 Features:
 
 Sign up and Log in
-A Log In system that authenticates between normal user and admin
-
-Admin info in test/fixtures/people.yml
 Profile that shows a Gravatar picture

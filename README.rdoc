@@ -2,4 +2,5 @@
 
 Much of the code comes from Rails tutorials such as
 http://guides.rubyonrails.org/getting_started.html#adding-some-validation
+and
 https://www.railstutorial.org/book

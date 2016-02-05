@@ -7,7 +7,31 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Person.create!(name:  "Example Person",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: true)
+  email: "example@railstutorial.org",
+  password:              "foobar",
+  password_confirmation: "foobar",
+  admin: true)
+
+# For randomly choosing a colour
+colour_a = ["Red", "Blue", "Grey", "", "", "Black", "Yellow"]
+
+99.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
+  height = rand(255)
+  weight = rand(255)
+  if height.between?(200, 255)
+    height = ""
+  end
+  if weight.between?(200, 255)
+    weight = ""
+  end
+  Person.create!(name:  name,
+    email: email,
+    password:              password,
+    password_confirmation: password,
+    height: height,
+    weight: weight,
+    colour: colour_a.sample)
+end

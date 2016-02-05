@@ -9,9 +9,17 @@ To use various commands on this project, jruby 9.0.0.0 must be installed.
 One of the errors is remedied by reinstalling bundle using
   gem install bundle
 
-run db:seed after db:migrate to generate a sample user with Admin privileges
+run
 
-Entry with Admin privileges is stored in /db/seeds.rb
+rake db:migrate:reset
+
+then
+
+rake db:seed
+
+to generate one sample user with Admin privileges and 99 other sample users without privileges
+
+Code to generate samples is stored in /db/seeds.rb
 
 Features:
 

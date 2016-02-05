@@ -5,8 +5,8 @@ class Person < ActiveRecord::Base
   validates :email, presence: true, length: {maximum: 255},
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive: false}
-  validates :weight, numericality: true, allow_blank: true
-  validates :height, numericality: true, allow_blank: true
+  validates :weight, numericality: true, allow_blank: true, length: {maximum: 6}
+  validates :height, numericality: true, allow_blank: true, length: {maximum: 6}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 

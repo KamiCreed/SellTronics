@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   before_action :admin_person, only: :destroy
 
   def index # Finds data for all people
-    @people = Person.all
+    @people = Person.paginate(page: params[:page])
   end
 
   def show # Finds individual people

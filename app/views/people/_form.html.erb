@@ -1,48 +1,38 @@
-<%= form_for @person do |f| %>
-
-  <!-- Display error messages, if any -->
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@person.errors.count, "error") %>
-        prohibited this person from being saved:
-      </h2>
-      <ul>
-        <% @person.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <!-- Display the form for person -->
-  <p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @person do |f| %>
+    <%= render 'shared/error_messages' %>
+    <!-- Display the form for person -->
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+    <%= f.text_field :name, class: 'form-control' %>
 
-  <p>
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
+    <%= f.email_field :email, class: 'form-control' %>
 
-  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.label :password_confirmation, "Confirm password" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
-  </p>
+    <%= f.text_field :weight, class: 'form-control' %>
 
-  <p>
-    <%= f.label :height %><br>
-    <%= f.text_field :height %>
-  </p>
+    <p>
+      <%= f.label :height %><br>
+      <%= f.text_field :height, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= f.label :colour %><br>
-    <%= f.text_field :colour %>
-  </p>
+    <p>
+      <%= f.label :colour %><br>
+      <%= f.text_field :colour, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
+    <p>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    </p>
+    <% end %>
+    
+    <%= link_to 'Back', people_path %>
+  </div>
+</div>

@@ -8,5 +8,5 @@ class Person < ActiveRecord::Base
   validates :weight, numericality: true, allow_blank: true
   validates :height, numericality: true, allow_blank: true
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 end

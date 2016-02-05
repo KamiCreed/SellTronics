@@ -15,7 +15,7 @@ then
   rake db:seed
 to generate one sample user with Admin privileges and 99 other sample users without privileges for local hosting.
 
-Code to generate samples is stored in /db/seeds.rb
+Code to generate samples is stored in /db/seeds.rb. The login information for the Admin person is also stored there.
 
 Features:
 

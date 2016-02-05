@@ -24,5 +24,7 @@ Code to generate samples is stored in /db/seeds.rb
 Features:
 
 Sign up and Log in
+
 Login feature with Admin. Admin are the only ones able to delete entries.
+
 Profile that shows a Gravatar picture

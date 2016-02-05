@@ -4,3 +4,7 @@ Much of the code comes from Rails tutorials such as
 http://guides.rubyonrails.org/getting_started.html#adding-some-validation
 and
 https://www.railstutorial.org/book
+
+To use various commands on this project, jruby 9.0.0.0 must be installed.
+One of the errors is remedied by reinstalling bundle using
+  'gem install bundle'

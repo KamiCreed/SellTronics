@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
-  before_action :logged_in_person, only: [:index, :edit, :update]
+  before_action :logged_in_person, only: [:index, :edit, :update, :destroy]
   before_action :correct_person, only: [:edit, :update]
+  before_action :admin_person, only: :destroy
 
   def index # Finds data for all people
     @people = Person.all
@@ -45,6 +46,7 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
+    flash[:success] = "Person deleted"
 
     redirect_to people_path
   end
@@ -70,5 +72,10 @@ class PeopleController < ApplicationController
     def correct_person
       @person = Person.find(params[:id])
       redirect_to(root_url) unless current_person?(@person)
+    end
+
+    # Confirms an admin person.
+    def admin_person
+      redirect_to(root_url) unless current_person.admin?
     end
 end

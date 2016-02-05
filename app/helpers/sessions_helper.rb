@@ -5,6 +5,10 @@ module SessionsHelper
     session[:person_id] = person.id
   end
 
+  def current_person?(person)
+    person == current_person
+  end
+
   # Returns the current logged-in person (if any).
   def current_person
     @current_person ||= Person.find_by(id: session[:person_id])

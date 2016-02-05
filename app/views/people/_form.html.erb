@@ -1,38 +1,26 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @person do |f| %>
-    <%= render 'shared/error_messages' %>
-    <!-- Display the form for person -->
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: 'form-control' %>
+<%= form_for @person do |f| %>
+<%= render 'shared/error_messages' %>
+<!-- Display the form for person -->
+<%= f.label :name %><br>
+<%= f.text_field :name, class: 'form-control' %>
 
-    <%= f.label :email %><br>
-    <%= f.email_field :email, class: 'form-control' %>
+<%= f.label :email %><br>
+<%= f.email_field :email, class: 'form-control' %>
 
-    <%= f.label :password %><br>
-    <%= f.password_field :password, class: 'form-control' %>
+<%= f.label :password %><br>
+<%= f.password_field :password, class: 'form-control' %>
 
-    <%= f.label :password_confirmation, "Confirm password" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
+<%= f.label :password_confirmation, "Confirm password" %>
+<%= f.password_field :password_confirmation, class: 'form-control' %>
 
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight, class: 'form-control' %>
+<%= f.label :weight %><br>
+<%= f.text_field :weight, class: 'form-control' %>
 
-    <p>
-      <%= f.label :height %><br>
-      <%= f.text_field :height, class: 'form-control' %>
-    </p>
+<%= f.label :height %><br>
+<%= f.text_field :height, class: 'form-control' %>
 
-    <p>
-      <%= f.label :colour %><br>
-      <%= f.text_field :colour, class: 'form-control' %>
-    </p>
+<%= f.label :colour %><br>
+<%= f.text_field :colour, class: 'form-control' %>
 
-    <p>
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    </p>
-    <% end %>
-    
-    <%= link_to 'Back', people_path %>
-  </div>
-</div>
+<%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

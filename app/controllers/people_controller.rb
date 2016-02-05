@@ -20,6 +20,7 @@ class PeopleController < ApplicationController
 
     # Checks if it is saved in case of bad input
     if @person.save
+      flash[:success] = "Welcome to SellTronics!"
       redirect_to @person
     else # render 'new' and show error messages
       render 'new'

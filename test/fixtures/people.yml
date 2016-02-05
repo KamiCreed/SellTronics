@@ -1,13 +1,2 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  weight: 1.5
-  height: 1.5
-  colour: MyString
-
-two:
-  name: MyString
-  weight: 1.5
-  height: 1.5
-  colour: MyString
+#empty

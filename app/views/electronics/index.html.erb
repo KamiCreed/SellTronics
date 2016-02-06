@@ -1,16 +1,22 @@
 <% provide(:title, "All Electronics") %>
 <h1>All Electronics</h1>
 
+<% if logged_in? && current_person.admin? %>
+  <p class="center"><%= link_to "Create new electronic", new_electronic_path %></p>
+  <% admin = true %>
+<% end %>
+
 <%= will_paginate %>
 
 <ul class="index">
 <% @electronics.each do |electronic| %>
   <li>
     <%= link_to electronic.name, electronic %>
-    <% if logged_in? && current_person.admin? %>
-      | <%= link_to "Delete", electronic, method: :delete, data: { confirm: "Are you sure?"} %>
+    <% if admin %>
+     | <%= link_to "Edit", edit_electronic_path(electronic) %>
+     | <%= link_to "Delete", electronic, method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
-    <%= electronic.desc %>
+     | <%= electronic.desc %>
   </li>
 <% end %>
 </ul>

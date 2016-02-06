@@ -1,7 +1,13 @@
 class ElectronicsController < ApplicationController
+  before_action :logged_in_person, only: [:edit, :new, :create, :update, :destroy]
+  before_action :admin_person, only: [:edit, :new, :create, :update, :destroy]
 
   def index
     @electronics = Electronic.paginate(page: params[:page])
+  end
+
+  def show
+    @electronic = Electronic.find(params[:id])
   end
 
   def new
@@ -9,6 +15,7 @@ class ElectronicsController < ApplicationController
   end
 
   def edit
+    @electronic = Electronic.find(params[:id])
   end
 
   def create
@@ -23,8 +30,15 @@ class ElectronicsController < ApplicationController
     end
   end
 
-  def show
-    @electronic = Electronic.find(params[:id])
+  def update
+    @electronic = electronic.find(params[:id])
+
+    if @electronic.update(electronic_params)
+      flash[:success] = "Electronic updated"
+      redirect_to @electronic
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -39,5 +53,19 @@ class ElectronicsController < ApplicationController
 
     def electronic_params
       params.require(:electronic).permit(:name, :desc)
+    end
+
+    # Confirms a logged-in person.
+    def logged_in_person
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms an admin person.
+    def admin_person
+      redirect_to(root_url) unless current_person.admin?
     end
 end

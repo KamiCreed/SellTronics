@@ -1,2 +1,12 @@
-<h1>Electronics#show</h1>
-<p>Find me in app/views/electronics/show.html.erb</p>
+<% provide(:title, @electronic.name) %>
+<!-- Show individual people -->
+
+<p>
+  <%= @electronic.name %>
+</p>
+<br>
+<p>
+  <%= @electronic.desc %>
+</p>
+
+<%= link_to 'Back', electronic_path %>

@@ -1,0 +1,18 @@
+<% provide(:title, "All Electronics") %>
+<h1>All Electronics</h1>
+
+<%= will_paginate %>
+
+<ul class="index">
+<% @electronics.each do |electronic| %>
+  <li>
+    <%= link_to electronic.name, electronic %>
+    <% if logged_in? && current_person.admin? %>
+      | <%= link_to "Delete", electronic, method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+    <%= electronic.desc %>
+  </li>
+<% end %>
+</ul>
+
+<%= will_paginate %>

@@ -1,7 +1,7 @@
 class ElectronicsController < ApplicationController
 
   def index
-    @electronic = Electronic.all?
+    @electronics = Electronic.paginate(page: params[:page])
   end
 
   def new
@@ -25,6 +25,14 @@ class ElectronicsController < ApplicationController
 
   def show
     @electronic = Electronic.find(params[:id])
+  end
+
+  def destroy
+    @electronic = Electronic.find(params[:id])
+    @electronic.destroy
+    flash[:success] = "Electronic deleted"
+
+    redirect_to electronic_path
   end
 
   private

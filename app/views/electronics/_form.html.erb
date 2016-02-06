@@ -1,0 +1,12 @@
+<%= form_for @electronic do |f| %>
+<% @error_var = @electronic %> <!-- in order to use the shared error messages -->
+<%= render 'shared/error_messages' %>
+<!-- Display the form for person -->
+<%= f.label :name %><br>
+<%= f.text_field :name, class: 'form-control' %>
+
+<%= f.label :desc %><br>
+<%= f.text_area :desc, class: 'form-control' %>
+
+<%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

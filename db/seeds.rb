@@ -35,3 +35,22 @@ colour_a = ["Red", "Blue", "Grey", "", "", "Black", "Yellow"]
     weight: weight,
     colour: colour_a.sample)
 end
+
+Electronic.create!(
+  name: "Example product",
+  desc: "Example description",
+  featured: true
+)
+
+99.times do |n|
+  name = Faker::Commerce.product_name
+  desc = Faker::Lorem.paragraphs
+  if rand(10) < 2
+    featured = true
+  end
+  Electronic.create!(
+    name: name,
+    desc: desc,
+    featured: featured
+  )
+end

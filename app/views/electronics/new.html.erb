@@ -1,2 +1,9 @@
-<h1>Electronics#new</h1>
-<p>Find me in app/views/electronics/new.html.erb</p>
+<% provide(:title, "New Electronic") %>
+<% provide(:button_text, "Add Electronic") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Add a new electronic</h1>
+
+    <%= render 'form' %>
+  </div>
+</div>

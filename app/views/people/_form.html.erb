@@ -14,13 +14,13 @@
 <%= f.label :password_confirmation, "Confirm password" %>
 <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-<%= f.label :weight %><br>
+<%= f.label :weight, "Weight (Optional)" %><br>
 <%= f.text_field :weight, class: 'form-control' %>
 
-<%= f.label :height %><br>
+<%= f.label :height, "Height (Optional)" %><br>
 <%= f.text_field :height, class: 'form-control' %>
 
-<%= f.label :colour %><br>
+<%= f.label :colour, "Colour (Optional)" %><br>
 <%= f.text_field :colour, class: 'form-control' %>
 
 <%= f.submit yield(:button_text), class: "btn btn-primary" %>

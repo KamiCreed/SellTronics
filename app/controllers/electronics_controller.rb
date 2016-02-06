@@ -1,4 +1,9 @@
 class ElectronicsController < ApplicationController
+
+  def index
+    @electronic = Electronic.all?
+  end
+
   def new
     @electronic = Electronic.new
   end
@@ -11,7 +16,6 @@ class ElectronicsController < ApplicationController
 
     # Checks if it is saved in case of bad input
     if @electronic.save
-      log_in @electronic
       flash[:success] = "Electronic successfully added!"
       redirect_to @electronic
     else # render 'new' and show error messages
@@ -20,6 +24,7 @@ class ElectronicsController < ApplicationController
   end
 
   def show
+    @electronic = Electronic.find(params[:id])
   end
 
   private

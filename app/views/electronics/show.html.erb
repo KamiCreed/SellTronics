@@ -1,12 +1,15 @@
 <% provide(:title, @electronic.name) %>
 <!-- Show individual people -->
 
-<p>
-  <%= @electronic.name %>
-</p>
-<br>
-<p>
-  <%= @electronic.desc %>
-</p>
+<div class="center">
+  <h2>
+    <%= @electronic.name %>
+  </h2>
+  <br>
+  <h2>Description</h2>
+  <p>
+    <%= @electronic.desc %>
+  </p>
 
-<%= link_to 'Back', electronic_path %>
+  <%= link_to 'Back', electronic_path %>
+</div>

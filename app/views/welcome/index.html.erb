@@ -3,3 +3,19 @@
   <p>This is the home page for SellTronics.</p>
   <h2><%= link_to "List of all electronics", electronics_path %></h2>
 </div>
+<h1>Featured Electronics</h1>
+<% all_electronics %> <!-- Get all of the electronics -->
+<ul class="index">
+<% @electronics.each do |electronic| %>
+  <li>
+    <% if electronic.featured? %>
+      <%= link_to electronic.name, electronic %>
+      <% if logged_in? && current_person.admin? %>
+       | <%= link_to "Edit", edit_electronic_path(electronic) %>
+       | <%= link_to "Delete", electronic, method: :delete, data: { confirm: "Are you sure?"} %>
+      <% end %>
+        | <%= electronic.desc %>
+    <% end %>
+  </li>
+<% end %>
+</ul>

@@ -31,7 +31,7 @@ class ElectronicsController < ApplicationController
   end
 
   def update
-    @electronic = electronic.find(params[:id])
+    @electronic = Electronic.find(params[:id])
 
     if @electronic.update(electronic_params)
       flash[:success] = "Electronic updated"
@@ -52,7 +52,7 @@ class ElectronicsController < ApplicationController
   private
 
     def electronic_params
-      params.require(:electronic).permit(:name, :desc)
+      params.require(:electronic).permit(:name, :desc, :featured)
     end
 
     # Confirms a logged-in person.

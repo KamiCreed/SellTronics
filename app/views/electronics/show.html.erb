@@ -5,6 +5,9 @@
   <h1>
     <%= @electronic.name %>
   </h1>
+  <% if @electronic.featured? %>
+    <h2 id="featured">Featured item!</h2>
+  <% end %>
   <h2>Description</h2>
   <p>
     <%= @electronic.desc %>

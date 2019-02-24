@@ -138,7 +138,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-jdbcpostgresql-adapter
   bcrypt (= 3.1.7)
-  bootstrap-sass (= 3.2.0.0)
+  bootstrap-sass, ">= 3.4.1"
   bootstrap-will_paginate (= 0.0.10)
   coffee-rails (~> 4.0.0)
   faker (= 1.4.2)
